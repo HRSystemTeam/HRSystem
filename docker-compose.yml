@@ -1,0 +1,20 @@
+version: "3"
+services:
+  db:
+    image: mysql:5.7.22
+    container_name: db
+    environment:
+      MYSQL_DATABASE: ry-vue
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - F:/IDEA/RuoYi-Vue/ruoyi/docker/db:/var/lib/mysql
+      - F:/IDEA/RuoYi-Vue/ruoyi/docker/mysql:/etc/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+  redis:
+    image: redis
+    container_name: ry-redis
+    restart: always
+    ports:
+      - "6379:6379"
