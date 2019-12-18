@@ -7,8 +7,8 @@ services:
       MYSQL_DATABASE: ry-vue
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - F:/IDEA/RuoYi-Vue/ruoyi/docker/db:/var/lib/mysql
-      - F:/IDEA/RuoYi-Vue/ruoyi/docker/mysql:/etc/mysql
+      - ./docker/db:/var/lib/mysql
+      - ./docker/mysql:/etc/mysql
     restart: always
     ports:
       - "3306:3306"
@@ -17,4 +17,4 @@ services:
     container_name: ry-redis
     restart: always
     ports:
-      - "6379:6379"
+      - "6370:6379"

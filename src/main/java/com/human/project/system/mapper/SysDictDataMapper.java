@@ -1,6 +1,8 @@
 package com.human.project.system.mapper;
 
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import com.human.project.system.domain.SysDictData;
 
@@ -9,6 +11,7 @@ import com.human.project.system.domain.SysDictData;
  * 
  * @author ruoyi
  */
+@Mapper
 public interface SysDictDataMapper
 {
     /**

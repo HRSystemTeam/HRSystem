@@ -2,12 +2,14 @@ package com.human.project.system.mapper;
 
 import java.util.List;
 import com.human.project.system.domain.SysPost;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 岗位信息 数据层
  * 
  * @author ruoyi
  */
+@Mapper
 public interface SysPostMapper
 {
     /**
