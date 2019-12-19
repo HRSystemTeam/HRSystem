@@ -112,4 +112,17 @@ public interface SysUserMapper {
      * @return 结果
      */
     public SysUser checkEmailUnique(String email);
+
+    /**
+     * 添加银行卡，并且放回id号
+     * @param user
+     * @return
+     */
+    int insertCardNumber(SysUser user);
+
+    /**
+     * 更新银行卡卡号
+     * @param user
+     */
+    void updateCardNumber(SysUser user);
 }
