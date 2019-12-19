@@ -183,8 +183,6 @@ public class SysUserServiceImpl implements ISysUserService {
     @Override
     @Transactional
     public int insertUser(SysUser user) {
-        userMapper.insertCardNumber(user);
-        System.out.println(user.getCardId());
         // 新增用户信息
         int rows = userMapper.insertUser(user);
         // 新增用户岗位关联
@@ -212,7 +210,6 @@ public class SysUserServiceImpl implements ISysUserService {
         userPostMapper.deleteUserPostByUserId(userId);
         // 新增用户与岗位管理
         insertUserPost(user);
-        userMapper.updateCardNumber(user);
         return userMapper.updateUser(user);
     }
 
@@ -241,7 +238,7 @@ public class SysUserServiceImpl implements ISysUserService {
     /**
      * 修改用户头像
      *
-     * @param userId 用户ID
+     * @param userName 用户ID
      * @param avatar 头像地址
      * @return 结果
      */

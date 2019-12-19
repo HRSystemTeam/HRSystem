@@ -112,10 +112,6 @@ public class SysUser extends BaseEntity {
     private String cardNumber;
 
     /**
-     * 银行卡对应的id
-     */
-    private int cardId;
-    /**
      * 角色对象
      */
     private List<SysRole> roles;
@@ -149,14 +145,6 @@ public class SysUser extends BaseEntity {
 
     public SysUser(Long userId) {
         this.userId = userId;
-    }
-
-    public void setCardId(int cardId) {
-        this.cardId = cardId;
-    }
-
-    public int getCardId() {
-        return cardId;
     }
 
     public String getCardNumber() {

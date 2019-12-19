@@ -6,7 +6,6 @@
 
     <resultMap type="SysUser" id="SysUserResult">
         <id property="userId" column="user_id"/>
-		<result property="cardId" column="card_id"/>
 		<result property="deptId" column="dept_id"/>
         <result property="userName" column="user_name"/>
         <result property="nickName" column="nick_name"/>
@@ -51,14 +50,13 @@
     </resultMap>
 
     <sql id="selectUserVo">
-        select u.user_id, u.dept_id, u.user_name, u.nick_name, u.email, u.avatar, u.phonenumber,b.card_id,b.card_number,w.basicWages,w.otherWages,w.totalWages, u.password, u.sex, u.status, u.del_flag, u.login_ip, u.login_date, u.create_by, u.create_time, u.remark,
+        select u.user_id, u.dept_id, u.user_name, u.nick_name, u.email, u.avatar, u.phonenumber,u.card_number,w.basicWages,w.otherWages,w.totalWages, u.password, u.sex, u.status, u.del_flag, u.login_ip, u.login_date, u.create_by, u.create_time, u.remark,
         d.dept_id, d.parent_id, d.dept_name, d.order_num, d.leader, d.status as dept_status,
         r.role_id, r.role_name, r.role_key, r.role_sort, r.data_scope, r.status as role_status
         from sys_user u
 		    left join sys_dept d on u.dept_id = d.dept_id
 		    left join sys_user_role ur on u.user_id = ur.user_id
 		    left join sys_role r on r.role_id = ur.role_id
-		    left join sys_bank_card b on b.card_id = u.card_id
 		    left join sys_wages w on w.user_id = u.user_id
 
     </sql>
@@ -76,7 +74,7 @@
             AND u.phonenumber like concat('%', #{phonenumber}, '%')
         </if>
         <if test="cardNumber != null and cardNumber != ''">
-            AND b.card_number like concat('%', #{cardNumber}, '%')
+            AND u.card_number like concat('%', #{cardNumber}, '%')
         </if>
         <if test="params.beginTime != null and params.beginTime != ''"><!-- 开始时间检索 -->
             AND date_format(u.create_time,'%y%m%d') &gt;= date_format(#{params.beginTime},'%y%m%d')
@@ -114,10 +112,6 @@
 		select user_id, email from sys_user where email = #{email}
 	</select>
 
-	<insert id="insertCardNumber" parameterType="SysUser" useGeneratedKeys="true" keyProperty="cardId" keyColumn="card_id">
-		insert into sys_bank_card(card_number) values (#{cardNumber})
-	</insert>
-
     <insert id="insertUser" parameterType="SysUser" useGeneratedKeys="true" keyProperty="userId">
         insert into sys_user(
         <if test="userId != null and userId != 0">user_id,</if>
@@ -127,7 +121,7 @@
         <if test="email != null and email != ''">email,</if>
         <if test="avatar != null and avatar != ''">avatar,</if>
         <if test="phonenumber != null and phonenumber != ''">phonenumber,</if>
-		<if test="cardId != null and cardId != ''">card_id,</if>
+		<if test="cardNumber != null and cardNumber != ''">card_number,</if>
 		<if test="sex != null and sex != ''">sex,</if>
         <if test="password != null and password != ''">password,</if>
         <if test="status != null and status != ''">status,</if>
@@ -142,7 +136,7 @@
         <if test="email != null and email != ''">#{email},</if>
         <if test="avatar != null and avatar != ''">#{avatar},</if>
         <if test="phonenumber != null and phonenumber != ''">#{phonenumber},</if>
-		<if test="cardId != null and cardId != ''">#{cardId},</if>
+        <if test="cardNumber != null and cardNumber != ''">#{cardNumber},</if>
 		<if test="sex != null and sex != ''">#{sex},</if>
         <if test="password != null and password != ''">#{password},</if>
         <if test="status != null and status != ''">#{status},</if>
@@ -159,6 +153,7 @@
             <if test="userName != null and userName != ''">user_name = #{userName},</if>
             <if test="nickName != null and nickName != ''">nick_name = #{nickName},</if>
             <if test="email != null and email != ''">email = #{email},</if>
+            <if test="cardNumber != null and cardNumber != ''">card_number = #{cardNumber},</if>
             <if test="phonenumber != null and phonenumber != ''">phonenumber = #{phonenumber},</if>
             <if test="sex != null and sex != ''">sex = #{sex},</if>
             <if test="avatar != null and avatar != ''">avatar = #{avatar},</if>
@@ -173,9 +168,6 @@
         where user_id = #{userId}
     </update>
 
-    <update id="updateCardNumber" parameterType="SysUser">
-        update sys_bank_card set card_number = #{cardNumber} where card_id = #{cardId}
-    </update>
     <update id="updateUserStatus" parameterType="SysUser">
  		update sys_user set status = #{status} where user_id = #{userId}
 	</update>
