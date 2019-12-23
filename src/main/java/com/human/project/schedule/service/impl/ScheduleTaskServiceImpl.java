@@ -27,12 +27,6 @@ public class ScheduleTaskServiceImpl implements ScheduleTaskService {
     @Autowired
     private WagesInfoMapper wagesInfoMapper;
 
-//    @Override
-////    @Scheduled(cron = "0 0 0 1 * ?")
-//    @Scheduled(cron = "0/5 * * * * ? ")//每5秒执行一次
-//    public void insertWagesRecord() {
-//
-//    }
     class MyThread extends Thread{
         public MyThread(){
             super();
@@ -54,9 +48,12 @@ public class ScheduleTaskServiceImpl implements ScheduleTaskService {
         wagesInfoMapper.insertWagesRecord(wagesInfos);
         logger.info("定时任务完成");
     }
+
+    /**
+     * 每月的第一天都将上一个月的员工工资导入工资发放记录，便于工资发放
+     */
     @Override
     @Scheduled(cron = "0 0 0 1 * ?")//每个月1号执行
-//    @Scheduled(cron = "0/5 * * * * ? ")//每5秒执行一次
     public void insertWagesRecord(){
         System.out.println("定时执行");
         MyThread t=new MyThread();

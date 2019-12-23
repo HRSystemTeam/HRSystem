@@ -32,10 +32,14 @@ public interface WagesInfoMapper {
     List<WagesInfo> selectRecordList(WagesInfo wagesInfo);
 
     /**
-     * 获取工资发放日期记录
+     * 获取工资发放日期列表
      * @return
      */
     List<String> getAllMonth();
 
+    /**
+     * 根据记录id进行工资发放
+     * @param ids
+     */
     void sendWagesByIds(List<Long> ids);
 }
