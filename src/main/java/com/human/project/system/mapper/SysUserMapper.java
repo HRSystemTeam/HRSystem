@@ -113,4 +113,7 @@ public interface SysUserMapper {
      */
     public SysUser checkEmailUnique(String email);
 
+
+    int updateWages(SysUser user);
+    int insertWages(SysUser user);
 }

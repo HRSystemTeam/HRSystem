@@ -27,7 +27,7 @@ import com.human.project.system.service.ISysUserService;
 
 /**
  * 用户信息
- * 
+ *
  * @author ruoyi
  */
 @RestController
@@ -160,5 +160,27 @@ public class SysUserController extends BaseController
         userService.checkUserAllowed(user);
         user.setUpdateBy(SecurityUtils.getUsername());
         return toAjax(userService.updateUserStatus(user));
+    }
+
+    /**
+     * 工资修改
+     */
+    @PreAuthorize("@ss.hasPermi('system:user:wagesEdit')")
+    @Log(title = "工资管理", businessType = BusinessType.UPDATE)
+    @PutMapping("/wagesEdit")
+    public AjaxResult wagesEdit(@RequestBody SysUser user)
+    {
+        int row = userService.updateWages(user);
+        if (row == 0)
+            return AjaxResult.success("修改失败");
+        return AjaxResult.success("修改成功");
+    }
+
+
+    @PreAuthorize("@ss.hasPermi('system:user:getListUser')")
+    @GetMapping("/getListUser")
+    public AjaxResult getListUser(SysUser user)
+    {
+        return AjaxResult.success(userService.selectUserList(user));
     }
 }

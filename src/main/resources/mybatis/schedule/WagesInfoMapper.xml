@@ -4,23 +4,53 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.human.project.schedule.dao.WagesInfoMapper">
     <resultMap id="wagesInfo" type="com.human.project.schedule.domain.WagesInfo">
+        <id property="recordId" column="record_id"/>
         <result property="userId" column="user_id"/>
-        <result property="totalWages" column="totalWages"/>
+        <result property="userName" column="user_name"/>
+        <result property="totalWages" column="total_wages"/>
         <result property="cardNumber" column="card_number"/>
+        <result property="wagesDate" column="wages_date"/>
+        <result property="releaseDate" column="release_date"/>
+        <result property="isSend" column="is_send"/>
     </resultMap>
-    
+
     <select id="getAllWageInfo" resultMap="wagesInfo">
-        SELECT sys_user.user_id, sys_wages.totalWages, sys_user.card_number
+        SELECT sys_user.user_id, sys_user.user_name,sys_wages.total_wages, sys_user.card_number
         FROM sys_user LEFT OUTER JOIN sys_wages on sys_user.user_id = sys_wages.user_id
-        WHERE sys_user.`status` = 0
+        WHERE sys_user.`status` = 0 and sys_user.`del_flag` = 0
     </select>
 
     <insert id="insertWagesRecord">
-        insert into sys_wages_record (user_id, total_wages, card_number)
+        insert into sys_wages_record (user_id,user_name, total_wages, card_number)
         values
         <foreach collection="wagesInfos" item="temp" index="index" separator=",">
-            (#{temp.userId}, #{temp.totalWages}, #{temp.cardNumber})
+            (#{temp.userId},#{temp.userName}, #{temp.totalWages}, #{temp.cardNumber})
         </foreach>
     </insert>
 
+    <select id="selectRecordList" resultMap="wagesInfo">
+        select * from sys_wages_record r,sys_user u
+        where r.user_id = u.user_id
+        <if test="userId != 0 and userId != null">AND r.user_id = #{userId}</if>
+        <if test="isSend != null and isSend != 0">AND r.is_send = #{isSend}</if>
+        <if test="userName != null and userName != ''">AND r.user_name = #{userName}</if>
+        <if test="deptId != null and deptId != 0">
+        AND (u.dept_id = #{deptId} OR u.dept_id IN ( SELECT t.dept_id FROM sys_dept t WHERE FIND_IN_SET(#{deptId},ancestors)))</if>
+        <if test="wagesDate != null and wagesDate != ''">
+            AND r.wages_date = #{wagesDate}
+        </if>
+
+    </select>
+
+    <select id="getAllMonth" resultType="java.lang.String">
+        select wages_date from sys_wages_record group by wages_date order by wages_date desc
+    </select>
+
+    <update id="sendWagesByIds">
+        update sys_wages_record set is_send = 2 where record_id in
+        <foreach collection="list" item="recordId" index="index"
+                 open="(" close=")" separator=",">
+            #{recordId}
+        </foreach>
+    </update>
 </mapper>

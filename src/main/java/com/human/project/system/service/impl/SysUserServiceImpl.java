@@ -340,4 +340,13 @@ public class SysUserServiceImpl implements ISysUserService {
         }
         return userMapper.deleteUserByIds(userIds);
     }
+
+    @Override
+    public int updateWages(SysUser user) {
+        int row = userMapper.updateWages(user);
+        if (row == 0){
+            row = userMapper.insertWages(user);
+        }
+        return row;
+    }
 }
