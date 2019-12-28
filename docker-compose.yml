@@ -18,3 +18,9 @@ services:
     restart: always
     ports:
       - "6370:6379"
+  web:
+    image: hr-system
+    container_name: hr-system
+    restart: always
+    ports:
+      - 8080:8080
