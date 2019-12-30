@@ -2,8 +2,8 @@ package com.human.framework.web.domain.server;
 
 /**
  * 系统相关信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class Sys
 {

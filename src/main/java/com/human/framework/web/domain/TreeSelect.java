@@ -9,8 +9,8 @@ import com.human.project.system.domain.SysMenu;
 
 /**
  * Treeselect树结构实体类
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class TreeSelect implements Serializable
 {

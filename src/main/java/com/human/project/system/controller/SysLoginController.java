@@ -19,8 +19,8 @@ import com.human.project.system.service.ISysMenuService;
 
 /**
  * 登录验证
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 @RestController
 public class SysLoginController
@@ -39,7 +39,7 @@ public class SysLoginController
 
     /**
      * 登录方法
-     * 
+     *
      * @param username 用户名
      * @param password 密码
      * @param captcha 验证码
@@ -58,7 +58,7 @@ public class SysLoginController
 
     /**
      * 获取用户信息
-     * 
+     *
      * @return 用户信息
      */
     @GetMapping("getInfo")
@@ -79,7 +79,7 @@ public class SysLoginController
 
     /**
      * 获取路由信息
-     * 
+     *
      * @return 路由信息
      */
     @GetMapping("getRouters")

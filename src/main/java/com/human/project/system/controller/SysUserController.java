@@ -28,7 +28,7 @@ import com.human.project.system.service.ISysUserService;
 /**
  * 用户信息
  *
- * @author ruoyi
+ * @author team
  */
 @RestController
 @RequestMapping("/system/user")

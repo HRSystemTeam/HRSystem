@@ -7,8 +7,8 @@ import com.human.framework.web.domain.BaseEntity;
 
 /**
  * 操作日志记录表 oper_log
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class SysOperLog extends BaseEntity
 {

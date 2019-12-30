@@ -16,7 +16,7 @@ import com.human.framework.web.domain.BaseEntity;
 /**
  * 用户对象 sys_user
  *
- * @author ruoyi
+ * @author team
  */
 public class SysUser extends BaseEntity {
     private static final long serialVersionUID = 1L;

@@ -4,8 +4,8 @@ import com.human.common.utils.Arith;
 
 /**
  * 內存相关信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class Mem
 {

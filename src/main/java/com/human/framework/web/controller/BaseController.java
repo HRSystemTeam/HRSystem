@@ -21,7 +21,7 @@ import com.human.framework.web.page.TableSupport;
 /**
  * web层通用数据处理
  *
- * @author ruoyi
+ * @author team
  */
 public class BaseController
 {

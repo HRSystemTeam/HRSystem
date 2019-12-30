@@ -19,8 +19,8 @@ import com.human.framework.web.domain.AjaxResult;
 
 /**
  * 全局异常处理器
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 @RestControllerAdvice
 public class GlobalExceptionHandler

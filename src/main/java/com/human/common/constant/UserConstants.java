@@ -2,8 +2,8 @@ package com.human.common.constant;
 
 /**
  * 用户常量信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class UserConstants
 {

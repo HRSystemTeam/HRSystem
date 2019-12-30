@@ -2,8 +2,8 @@ package com.human.framework.aspectj.lang.enums;
 
 /**
  * 数据源
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public enum DataSourceType
 {

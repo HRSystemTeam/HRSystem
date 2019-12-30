@@ -23,14 +23,14 @@ import oshi.util.Util;
 
 /**
  * 服务器相关信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class Server
 {
-    
+
     private static final int OSHI_WAIT_SECOND = 1000;
-    
+
     /**
      * CPU相关信息
      */
@@ -210,7 +210,7 @@ public class Server
 
     /**
      * 字节转换
-     * 
+     *
      * @param size 字节大小
      * @return 转换后值
      */

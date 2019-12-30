@@ -2,8 +2,8 @@ package com.human.framework.aspectj.lang.enums;
 
 /**
  * 操作状态
- * 
- * @author ruoyi
+ *
+ * @author team
  *
  */
 public enum BusinessStatus

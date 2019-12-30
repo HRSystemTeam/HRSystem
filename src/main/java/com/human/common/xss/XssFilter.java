@@ -17,8 +17,8 @@ import com.human.common.utils.StringUtils;
 
 /**
  * 防止XSS攻击的过滤器
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class XssFilter implements Filter
 {

@@ -23,8 +23,8 @@ import com.human.project.system.service.ISysMenuService;
 
 /**
  * 菜单信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 @RestController
 @RequestMapping("/system/menu")

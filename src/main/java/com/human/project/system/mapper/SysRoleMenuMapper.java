@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 角色与菜单关联表 数据层
  *
- * @author ruoyi
+ * @author team
  */
 @Mapper
 public interface SysRoleMenuMapper {

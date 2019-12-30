@@ -22,7 +22,7 @@ import com.human.framework.security.LoginUser;
 /**
  * 登录校验方法
  *
- * @author ruoyi
+ * @author team
  */
 @Component
 public class SysLoginService {

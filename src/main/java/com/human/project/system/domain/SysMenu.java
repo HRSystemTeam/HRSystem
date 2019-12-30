@@ -10,8 +10,8 @@ import com.human.framework.web.domain.BaseEntity;
 
 /**
  * 菜单权限表 sys_menu
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class SysMenu extends BaseEntity
 {
@@ -192,7 +192,7 @@ public class SysMenu extends BaseEntity
     {
         this.children = children;
     }
-    
+
     @Override
     public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)

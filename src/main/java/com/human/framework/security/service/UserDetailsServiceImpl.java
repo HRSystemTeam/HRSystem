@@ -17,7 +17,7 @@ import com.human.project.system.service.ISysUserService;
 /**
  * 用户验证处理
  *
- * @author ruoyi
+ * @author team
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService

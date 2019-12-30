@@ -6,8 +6,8 @@ import com.human.common.utils.DateUtils;
 
 /**
  * JVM相关信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class Jvm
 {

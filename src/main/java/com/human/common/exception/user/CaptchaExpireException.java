@@ -2,8 +2,8 @@ package com.human.common.exception.user;
 
 /**
  * 验证码失效异常类
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class CaptchaExpireException extends UserException
 {

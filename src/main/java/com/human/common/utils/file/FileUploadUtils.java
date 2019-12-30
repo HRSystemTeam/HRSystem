@@ -11,12 +11,12 @@ import com.human.common.exception.file.InvalidExtensionException;
 import com.human.common.utils.DateUtils;
 import com.human.common.utils.StringUtils;
 import com.human.common.utils.security.Md5Utils;
-import com.human.framework.config.RuoYiConfig;
+import com.human.framework.config.SystemConfig;
 
 /**
  * 文件上传工具类
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class FileUploadUtils
 {
@@ -33,7 +33,7 @@ public class FileUploadUtils
     /**
      * 默认上传的地址
      */
-    private static String defaultBaseDir = RuoYiConfig.getProfile();
+    private static String defaultBaseDir = SystemConfig.getProfile();
 
     private static int counter = 0;
 
@@ -146,7 +146,7 @@ public class FileUploadUtils
 
     private static final String getPathFileName(String uploadDir, String fileName) throws IOException
     {
-        int dirLastIndex = RuoYiConfig.getProfile().length() + 1;
+        int dirLastIndex = SystemConfig.getProfile().length() + 1;
         String currentDir = StringUtils.substring(uploadDir, dirLastIndex);
         String pathFileName = Constants.RESOURCE_PREFIX + "/" + currentDir + "/" + fileName;
         return pathFileName;
@@ -227,7 +227,7 @@ public class FileUploadUtils
 
     /**
      * 获取文件名的后缀
-     * 
+     *
      * @param file 表单文件
      * @return 后缀名
      */

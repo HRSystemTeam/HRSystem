@@ -10,8 +10,8 @@ import com.human.framework.web.domain.BaseEntity;
 
 /**
  * 角色表 sys_role
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class SysRole extends BaseEntity
 {
@@ -177,7 +177,7 @@ public class SysRole extends BaseEntity
     {
         this.deptIds = deptIds;
     }
-    
+
     public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
             .append("roleId", getRoleId())

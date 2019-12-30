@@ -11,9 +11,9 @@ import com.human.framework.security.LoginUser;
 import com.human.project.system.domain.SysRole;
 
 /**
- * RuoYi首创 自定义权限实现，se取自SpringSecurity首字母
+ * team首创 自定义权限实现，se取自SpringSecurity首字母
  *
- * @author ruoyi
+ * @author team
  */
 @Service("ss")
 public class PermissionService {

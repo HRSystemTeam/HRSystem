@@ -25,8 +25,8 @@ import com.human.project.system.service.ISysDictTypeService;
 
 /**
  * 数据字典信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 @RestController
 @RequestMapping("/system/dict/type")

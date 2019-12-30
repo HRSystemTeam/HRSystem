@@ -18,8 +18,8 @@ import com.human.framework.security.service.TokenService;
 
 /**
  * token过滤器 验证token有效性
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter

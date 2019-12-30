@@ -10,8 +10,8 @@ import com.human.framework.web.domain.BaseEntity;
 
 /**
  * 岗位表 sys_post
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class SysPost extends BaseEntity
 {
@@ -104,7 +104,7 @@ public class SysPost extends BaseEntity
     {
         this.flag = flag;
     }
-    
+
     @Override
     public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)

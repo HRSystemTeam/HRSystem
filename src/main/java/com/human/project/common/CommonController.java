@@ -12,14 +12,14 @@ import org.springframework.web.multipart.MultipartFile;
 import com.human.common.utils.StringUtils;
 import com.human.common.utils.file.FileUploadUtils;
 import com.human.common.utils.file.FileUtils;
-import com.human.framework.config.RuoYiConfig;
+import com.human.framework.config.SystemConfig;
 import com.human.framework.config.ServerConfig;
 import com.human.framework.web.domain.AjaxResult;
 
 /**
  * 通用请求处理
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 @RestController
 public class CommonController
@@ -31,7 +31,7 @@ public class CommonController
 
     /**
      * 通用下载请求
-     * 
+     *
      * @param fileName 文件名称
      * @param delete 是否删除
      */
@@ -45,7 +45,7 @@ public class CommonController
                 throw new Exception(StringUtils.format("文件名称({})非法，不允许下载。 ", fileName));
             }
             String realFileName = System.currentTimeMillis() + fileName.substring(fileName.indexOf("_") + 1);
-            String filePath = RuoYiConfig.getDownloadPath() + fileName;
+            String filePath = SystemConfig.getDownloadPath() + fileName;
 
             response.setCharacterEncoding("utf-8");
             response.setContentType("multipart/form-data");
@@ -72,7 +72,7 @@ public class CommonController
         try
         {
             // 上传文件路径
-            String filePath = RuoYiConfig.getUploadPath();
+            String filePath = SystemConfig.getUploadPath();
             // 上传并返回新文件名称
             String fileName = FileUploadUtils.upload(filePath, file);
             String url = serverConfig.getUrl() + fileName;

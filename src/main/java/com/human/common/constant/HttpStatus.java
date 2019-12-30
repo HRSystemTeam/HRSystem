@@ -2,8 +2,8 @@ package com.human.common.constant;
 
 /**
  * 返回状态码
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public interface HttpStatus
 {

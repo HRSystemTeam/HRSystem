@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * 角色表 数据层
  *
- * @author ruoyi
+ * @author team
  */
 @Mapper
 public interface SysRoleMapper {

@@ -2,8 +2,8 @@ package com.human.project.system.domain.vo;
 
 /**
  * 路由显示信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class MetaVo
 {

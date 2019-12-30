@@ -5,12 +5,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * 读取项目相关配置
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 @Component
-@ConfigurationProperties(prefix = "ruoyi")
-public class RuoYiConfig
+@ConfigurationProperties(prefix = "team")
+public class SystemConfig
 {
     /** 项目名称 */
     private String name;
@@ -77,7 +77,7 @@ public class RuoYiConfig
 
     public void setProfile(String profile)
     {
-        RuoYiConfig.profile = profile;
+        SystemConfig.profile = profile;
     }
 
     public static boolean isAddressEnabled()
@@ -87,7 +87,7 @@ public class RuoYiConfig
 
     public void setAddressEnabled(boolean addressEnabled)
     {
-        RuoYiConfig.addressEnabled = addressEnabled;
+        SystemConfig.addressEnabled = addressEnabled;
     }
 
     /**

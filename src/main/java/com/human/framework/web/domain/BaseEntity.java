@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Entity基类
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class BaseEntity implements Serializable
 {

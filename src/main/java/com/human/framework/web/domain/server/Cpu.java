@@ -4,8 +4,8 @@ import com.human.common.utils.Arith;
 
 /**
  * CPU相关信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public class Cpu
 {

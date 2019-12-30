@@ -2,8 +2,8 @@ package com.human.common.enums;
 
 /**
  * 用户状态
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 public enum UserStatus
 {

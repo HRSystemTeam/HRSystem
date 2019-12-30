@@ -23,8 +23,8 @@ import com.human.project.system.service.ISysDeptService;
 
 /**
  * 部门信息
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 @RestController
 @RequestMapping("/system/dept")

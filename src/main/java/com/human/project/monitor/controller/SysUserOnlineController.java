@@ -25,8 +25,8 @@ import com.human.project.system.service.ISysUserOnlineService;
 
 /**
  * 在线用户监控
- * 
- * @author ruoyi
+ *
+ * @author team
  */
 @RestController
 @RequestMapping("/monitor/online")
